@@ -1,14 +1,15 @@
-import { serve } from "bun";
+const express = require('express');
+const path = require('path');
 
-const PORT = parseInt(process.env.PORT || "3000", 10);
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-serve({
-  port: PORT,
-  fetch(request) {
-    const url = new URL(request.url);
-    const file = Bun.file(`dist${url.pathname === "/" ? "/index.html" : url.pathname}`);
-    return new Response(file);
-  },
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

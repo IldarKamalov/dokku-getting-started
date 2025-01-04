@@ -6,7 +6,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "npx serve -s dist -l $PORT",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
@@ -17,7 +16,6 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^4.0.0",
-    "serve": "^14.2.4",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }

@@ -1,0 +1,16 @@
+{
+    "name": "dokku-getting-started",
+    "scripts": {},
+    "env": {},
+    "formation": {
+        "web": {
+            "quantity": 1
+        }
+    },
+    "healthcheck": {
+        "path": "/health",
+        "interval": 10,
+        "timeout": 5,
+        "retries": 3
+    }
+}

@@ -7,10 +7,15 @@
             "quantity": 1
         }
     },
-    "healthcheck": {
-        "path": "/health",
-        "interval": 10,
-        "timeout": 5,
-        "retries": 3
+    "healthchecks": {
+        "web": [
+            {
+                "type": "startup",
+                "name": "web check",
+                "description": "Checking if the app responds to the /health endpoint",
+                "path": "/health",
+                "attempts": 3
+            }
+        ]
     }
 }

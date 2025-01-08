@@ -1,3 +1,2 @@
-# IK
+# dokku-getting-started
 
-test
